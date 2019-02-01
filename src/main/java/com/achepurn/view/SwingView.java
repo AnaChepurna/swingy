@@ -20,7 +20,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
  */
 public class SwingView implements IView, Runnable {
     private Model model;
-    private IController controller;
+    private SwingController controller;
     private JFrame frame;
     private List<Hero> heroes;
 
@@ -79,14 +79,15 @@ public class SwingView implements IView, Runnable {
              heroes) {
             chooseHero.add(heroButton(h));
         }
-        frame.add(chooseHero, 0);
         JButton bnew = new JButton("new");
         bnew.setBackground(Color.gray);
         bnew.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-
+                controller.
             }
         });
+        chooseHero.add(bnew);
+        frame.add(chooseHero, 0);
     }
 
     private JButton heroButton(final Hero hero) {

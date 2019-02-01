@@ -26,4 +26,8 @@ public class SwingController implements IController {
     public String getUserString() throws IOException {
         return null;
     }
+
+    public Hero createHero() {
+
+    }
 }

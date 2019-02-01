@@ -11,5 +11,4 @@ import java.io.IOException;
  */
 public interface IController {
     Hero getHero();
-    String getUserString() throws IOException;
 }

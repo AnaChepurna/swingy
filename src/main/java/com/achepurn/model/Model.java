@@ -19,6 +19,10 @@ public class Model {
     private Hero hero;
 
     public Model(String str) {
+        heroList.add(new Hero("Olly"));
+        heroList.add(new Hero("John"));
+        heroList.add(new Hero("Elsa"));
+        heroList.add(new Hero("Katty"));
         if (str.equals("console")) {
             this.view = new ConsoleView(this);
             this.controller = view.getController();
@@ -27,10 +31,6 @@ public class Model {
             this.view = new SwingView(this);
             this.controller = view.getController();
         }
-        heroList.add(new Hero("Olly"));
-        heroList.add(new Hero("John"));
-        heroList.add(new Hero("Elsa"));
-        heroList.add(new Hero("Katty"));
     }
 
     public void run() {

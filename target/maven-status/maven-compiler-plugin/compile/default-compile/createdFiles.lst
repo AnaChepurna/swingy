@@ -1,0 +1,15 @@
+com\achepurn\view\IView.class
+com\achepurn\view\SwingView$Start$4.class
+com\achepurn\view\SwingView$Start$3.class
+com\achepurn\controller\ConsoleController.class
+com\achepurn\view\SwingView$Start$5.class
+com\achepurn\controller\IController.class
+com\achepurn\controller\HeroFactory.class
+com\achepurn\view\SwingView.class
+com\achepurn\controller\SwingController.class
+com\achepurn\model\Hero.class
+com\achepurn\view\SwingView$Start$1.class
+com\achepurn\view\SwingView$Start$2.class
+com\achepurn\view\SwingView$Start.class
+com\achepurn\model\Model.class
+com\achepurn\view\ConsoleView.class

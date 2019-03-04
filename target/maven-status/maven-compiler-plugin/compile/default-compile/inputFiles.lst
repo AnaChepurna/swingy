@@ -1,9 +1,14 @@
 C:\Users\Ana Chepurna\Documents\study\swingy2.0\src\main\java\com\achepurn\model\Model.java
-C:\Users\Ana Chepurna\Documents\study\swingy2.0\src\main\java\com\achepurn\controller\ConsoleController.java
+C:\Users\Ana Chepurna\Documents\study\swingy2.0\src\main\java\com\achepurn\model\RandomMonster.java
 C:\Users\Ana Chepurna\Documents\study\swingy2.0\src\main\java\com\achepurn\view\ConsoleView.java
+C:\Users\Ana Chepurna\Documents\study\swingy2.0\src\main\java\com\achepurn\model\Map.java
+C:\Users\Ana Chepurna\Documents\study\swingy2.0\src\main\java\com\achepurn\model\Game.java
+C:\Users\Ana Chepurna\Documents\study\swingy2.0\src\main\java\com\achepurn\model\aUnit.java
+C:\Users\Ana Chepurna\Documents\study\swingy2.0\src\main\java\com\achepurn\controller\Controller.java
 C:\Users\Ana Chepurna\Documents\study\swingy2.0\src\main\java\com\achepurn\controller\HeroFactory.java
-C:\Users\Ana Chepurna\Documents\study\swingy2.0\src\main\java\com\achepurn\controller\SwingController.java
+C:\Users\Ana Chepurna\Documents\study\swingy2.0\src\main\java\com\achepurn\model\eHeroClass.java
 C:\Users\Ana Chepurna\Documents\study\swingy2.0\src\main\java\com\achepurn\model\Hero.java
 C:\Users\Ana Chepurna\Documents\study\swingy2.0\src\main\java\com\achepurn\view\SwingView.java
 C:\Users\Ana Chepurna\Documents\study\swingy2.0\src\main\java\com\achepurn\controller\IController.java
 C:\Users\Ana Chepurna\Documents\study\swingy2.0\src\main\java\com\achepurn\view\IView.java
+C:\Users\Ana Chepurna\Documents\study\swingy2.0\src\main\java\com\achepurn\model\Artifact.java

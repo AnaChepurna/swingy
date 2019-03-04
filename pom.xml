@@ -11,6 +11,20 @@
         <maven.compiler.source>1.6</maven.compiler.source>
         <maven.compiler.target>1.6</maven.compiler.target>
     </properties>
+    <repositories>
+        <repository>
+            <id>jline</id>
+            <name>JLine Project Repository</name>
+            <url>http://jline.sourceforge.net/m2repo</url>
+        </repository>
+    </repositories>
+    <dependencies>
+        <dependency>
+            <groupId>jline</groupId>
+            <artifactId>jline</artifactId>
+            <version>0.9.9</version>
+        </dependency>
+    </dependencies>
     <build>
         <plugins>
             <plugin>
@@ -28,5 +42,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

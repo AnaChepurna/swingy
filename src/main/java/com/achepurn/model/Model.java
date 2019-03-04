@@ -1,5 +1,6 @@
 package com.achepurn.model;
 
+import com.achepurn.controller.Controller;
 import com.achepurn.controller.IController;
 import com.achepurn.view.ConsoleView;
 import com.achepurn.view.IView;
@@ -14,9 +15,9 @@ import java.util.List;
 
 public class Model {
     private ArrayList<Hero> heroList = new ArrayList<Hero>();
-   // private IController controller;
-    private IView view;
-    private Hero hero;
+    private Controller controller;
+    private ConsoleView view;
+    private Game game;
 
     boolean getAccept() {
         return true;
@@ -27,26 +28,23 @@ public class Model {
       //  heroList.add(new Hero("John"));
        // heroList.add(new Hero("Elsa"));
       //  heroList.add(new Hero("Katty"));
-        if (str.equals("console")) {
-          //  this.view = new ConsoleView(this);
-          //  this.controller = view.getController();
-        }
-        else if (str.equals("swing")) {
-         //   this.view = new SwingView(this);
-         //   this.controller = view.getController();
-        }
+//        if (str.equals("console")) {
+//          //  this.view = new ConsoleView(this);
+//          //  this.controller = view.getController();
+//        }
+//        else if (str.equals("swing")) {
+//         //   this.view = new SwingView(this);
+//         //   this.controller = view.getController();
+//        }
+        controller = new Controller();
+        game = new Game(new Hero("Olly", eHeroClass.WIZARD, controller), this);
+        view = new ConsoleView( this, controller);
     }
 
     public void run() {
-        //hero = controller.getHero();
-    }
-
-    public final List<Hero> getHeroList() {
-        return heroList;
-    }
-
-    public void delHeroFromList(Hero hero) {
-        heroList.remove(hero);
+        game.map.mapping(game.list);
+        view.setMap(game.map);
+        view.run();
     }
 
     public static void main(String[] args) {
@@ -55,5 +53,9 @@ public class Model {
 //        System.out.println(model.hero.getName());
         System.out.println("Hello Swingy!");
 
+    }
+
+    public aUnit getUnit(int i) {
+        return game.getUnit(i);
     }
 }

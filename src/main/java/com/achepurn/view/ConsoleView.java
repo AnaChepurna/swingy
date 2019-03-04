@@ -1,6 +1,5 @@
 package com.achepurn.view;
 
-import com.achepurn.controller.ConsoleController;
 import com.achepurn.controller.IController;
 import com.achepurn.model.Hero;
 import com.achepurn.model.Model;
@@ -12,11 +11,11 @@ import java.util.List;
  */
 public class ConsoleView implements IView {
     private Model model;
-    private IController controller;
+    //private IController controller;
 
     public ConsoleView(Model model) {
         this.model = model;
-        this.controller = new ConsoleController(model, this);
+        //this.controller = new ConsoleController(model, this);
     }
 
     public void chooseHeroList() {
@@ -39,7 +38,8 @@ public class ConsoleView implements IView {
     }
 
     public IController getController() {
-        return controller;
+        //return controller;
+        return null;
     }
 
     public void showHero(Hero hero) {

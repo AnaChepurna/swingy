@@ -1,7 +1,6 @@
 package com.achepurn.view;
 
 import com.achepurn.controller.IController;
-import com.achepurn.controller.SwingController;
 import com.achepurn.model.Hero;
 import com.achepurn.model.Model;
 
@@ -10,18 +9,15 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.awt.event.WindowEvent;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
-
-import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 /**
  * Created by achepurn on 1/30/19.
  */
 public class SwingView implements IView {
     private Model model;
-    private SwingController controller;
+   // private SwingController controller;
     private JFrame frame;
     private List<Hero> heroes;
 
@@ -45,29 +41,29 @@ public class SwingView implements IView {
             finished = true;
         }
 
-        @Override
+        //@Override
         public void run() {
             initFrame();
             seeChooseHero();
         }
 
         private void seeChooseHero() {
-            initFrame();
-            JPanel chooseHero =  new JPanel();
-            chooseHero.setLayout(new GridLayout(heroes.size() / 2 + heroes.size() % 2, 2));
-            for (Hero h:
-                    heroes) {
-                chooseHero.add(heroButton(h));
-            }
-            JButton bnew = new JButton("new");
-            bnew.setBackground(Color.gray);
-            bnew.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
-                    controller.createHero();
-                }
-            });
-            chooseHero.add(bnew);
-            frame.add(chooseHero, 0);
+//            initFrame();
+//            JPanel chooseHero =  new JPanel();
+//            chooseHero.setLayout(new GridLayout(heroes.size() / 2 + heroes.size() % 2, 2));
+//            for (Hero h:
+//                    heroes) {
+//                chooseHero.add(heroButton(h));
+//            }
+//            JButton bnew = new JButton("new");
+//            bnew.setBackground(Color.gray);
+//            //bnew.addActionListener(new ActionListener() {
+//                public void actionPerformed(ActionEvent e) {
+//                    controller.createHero();
+//                }
+//            });
+//            chooseHero.add(bnew);
+//            frame.add(chooseHero, 0);
         }
 
         private JButton heroButton(final Hero hero) {
@@ -99,7 +95,7 @@ public class SwingView implements IView {
             confirm.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     frame.add(new JLabel(hero.getName() + " is choosen!"));
-                    controller.setHero(hero);
+                    //controller.setHero(hero);
                     System.out.println("interrupt this shit");
                     setFinished();
                     if (finished)
@@ -120,7 +116,7 @@ public class SwingView implements IView {
             JButton delete = new JButton("Delete");
             delete.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
-                    controller.delHeroFromList(hero);
+                   // controller.delHeroFromList(hero);
                     seeChooseHero();
                 }
             });
@@ -131,7 +127,7 @@ public class SwingView implements IView {
 
     public SwingView(Model model) {
         this.model = model;
-        this.controller = new SwingController(model, this);
+        //this.controller = new SwingController(model, this);
     }
 
     public void chooseHeroList() {
@@ -158,7 +154,8 @@ public class SwingView implements IView {
     }
 
     public IController getController() {
-        return controller;
+        //return controller;
+        return null;
     }
 
 }

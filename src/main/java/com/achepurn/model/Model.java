@@ -14,7 +14,7 @@ import java.util.List;
 
 public class Model {
     private ArrayList<Hero> heroList = new ArrayList<Hero>();
-    private IController controller;
+   // private IController controller;
     private IView view;
     private Hero hero;
 
@@ -24,17 +24,17 @@ public class Model {
         heroList.add(new Hero("Elsa"));
         heroList.add(new Hero("Katty"));
         if (str.equals("console")) {
-            this.view = new ConsoleView(this);
-            this.controller = view.getController();
+          //  this.view = new ConsoleView(this);
+          //  this.controller = view.getController();
         }
         else if (str.equals("swing")) {
-            this.view = new SwingView(this);
-            this.controller = view.getController();
+         //   this.view = new SwingView(this);
+         //   this.controller = view.getController();
         }
     }
 
     public void run() {
-        hero = controller.getHero();
+        //hero = controller.getHero();
     }
 
     public final List<Hero> getHeroList() {

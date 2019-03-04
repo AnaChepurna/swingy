@@ -19,10 +19,10 @@ public class Model {
     private Hero hero;
 
     public Model(String str) {
-        heroList.add(new Hero("Olly"));
-        heroList.add(new Hero("John"));
-        heroList.add(new Hero("Elsa"));
-        heroList.add(new Hero("Katty"));
+       // heroList.add(new Hero("Olly"));
+      //  heroList.add(new Hero("John"));
+       // heroList.add(new Hero("Elsa"));
+      //  heroList.add(new Hero("Katty"));
         if (str.equals("console")) {
           //  this.view = new ConsoleView(this);
           //  this.controller = view.getController();

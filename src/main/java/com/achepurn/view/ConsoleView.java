@@ -3,7 +3,10 @@ package com.achepurn.view;
 import com.achepurn.controller.Controller;
 import com.achepurn.controller.IController;
 import com.achepurn.model.*;
-import jline.ConsoleReader;
+import org.jline.reader.LineReader;
+import org.jline.reader.LineReaderBuilder;
+//import jline.console.ConsoleReader;
+
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -34,20 +37,11 @@ public class ConsoleView implements IView {
 
     private void clearConsole() {
         try {
-            ConsoleReader cr = new ConsoleReader();
-            cr.clearScreen();
-        } catch (IOException e) {
+            LineReader lr = LineReaderBuilder.builder().build();
+            lr.readLine();
+        } catch (Exception e) {
             e.printStackTrace();
         }
-//        try {
-//            if (os.contains("Windows"))
-//                Runtime.getRuntime().exec("cls");
-//            else
-//                Runtime.getRuntime().exec("clear");
-//        }
-//        catch (Exception e) {
-//            e.printStackTrace();
-//        }
     }
 
     private String getSymbol(int value) {

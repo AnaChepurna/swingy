@@ -16,7 +16,9 @@ public abstract class aUnit {
         return y;
     }
 
-    void collision(aUnit unit) {
+    abstract void collision(aUnit unit);
 
-    }
+    boolean fight(aUnit unit) {
+        return true;
+    };
 }

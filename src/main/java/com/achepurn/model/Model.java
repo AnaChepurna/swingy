@@ -18,6 +18,10 @@ public class Model {
     private IView view;
     private Hero hero;
 
+    boolean getAccept() {
+        return true;
+    }
+
     public Model(String str) {
        // heroList.add(new Hero("Olly"));
       //  heroList.add(new Hero("John"));

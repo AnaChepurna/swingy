@@ -16,6 +16,9 @@ public class Game {
         this.map = new Map(hero.level);
         hero.x = map.size / 2 + 1;
         hero.y = map.size / 2 + 1;
+        int monsterNum = RandomMonster.random.nextInt(hero.level) + hero.level;
+        for (int i = 0; i < monsterNum; i++)
+            list.add(new RandomMonster(hero.level));
         list.add(hero);
     }
 

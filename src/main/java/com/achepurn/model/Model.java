@@ -45,6 +45,7 @@ public class Model {
         game.map.mapping(game.list);
         view.setMap(game.map);
         view.run();
+        view.run();
     }
 
     public static void main(String[] args) {

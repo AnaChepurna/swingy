@@ -3,9 +3,8 @@ package com.achepurn.view;
 import com.achepurn.controller.Controller;
 import com.achepurn.controller.IController;
 import com.achepurn.model.*;
-import org.jline.reader.LineReader;
-import org.jline.reader.LineReaderBuilder;
-//import jline.console.ConsoleReader;
+import jline.AnsiWindowsTerminal;
+import jline.console.ConsoleReader;
 
 
 import java.io.IOException;
@@ -37,8 +36,11 @@ public class ConsoleView implements IView {
 
     private void clearConsole() {
         try {
-            LineReader lr = LineReaderBuilder.builder().build();
-            lr.readLine();
+            AnsiWindowsTerminal t = new AnsiWindowsTerminal();
+            t.init();
+            ConsoleReader cr = new ConsoleReader(System.in, System.out, t);
+            System.out.println(cr.clearScreen());
+            cr.flush();
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -20,10 +20,25 @@ public class ConsoleView implements IView {
     private Model model;
     private Controller controller;
     private Map map;
+    AnsiWindowsTerminal terminal;
+    ConsoleReader console;
+
 
     public ConsoleView(Model model, Controller controller) {
         this.model = model;
         this.controller = controller;
+        try {
+            initConsole();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void initConsole() throws Exception {
+        this.terminal = new AnsiWindowsTerminal();
+        terminal.init();
+        this.console = new ConsoleReader(System.in, System.out, terminal);
+        console.setExpandEvents(true);
     }
 
     public void setMap(Map map) {
@@ -34,16 +49,9 @@ public class ConsoleView implements IView {
         }
     }
 
-    private void clearConsole() {
-        try {
-            AnsiWindowsTerminal t = new AnsiWindowsTerminal();
-            t.init();
-            ConsoleReader cr = new ConsoleReader(System.in, System.out, t);
-            System.out.println(cr.clearScreen());
-            cr.flush();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    private void clearConsole() throws IOException {
+        console.clearScreen();
+        console.flush();
     }
 
     private String getSymbol(int value) {
@@ -59,27 +67,33 @@ public class ConsoleView implements IView {
         return "###";
     }
 
-    private void printMap() {
-        System.out.print("*");
+    private void printMap() throws IOException {
+        console.print("*");
         for (int i = 0; i < map.getSize(); i++)
-            System.out.print("---");
-        System.out.println("*");
+            console.print("---");
+        console.println("*");
         for (int i = 0; i < map.getSize(); i++) {
-            System.out.print("|");
+            console.print("|");
             for (int j = 0; j < map.getSize(); j++) {
                 String str = getSymbol(map.getValue(i, j));
-                System.out.print(str);
+                console.print(str);
             }
-            System.out.println("|");
+            console.println("|");
         }
-        System.out.print("*");
+        console.print("*");
         for (int i = 0; i < map.getSize(); i++)
-            System.out.print("---");
-        System.out.println("*");
+            console.print("---");
+        console.println("*");
+        console.flush();
     }
 
     public void run() {
-        clearConsole();
-        printMap();
+        try {
+            clearConsole();
+            printMap();
+            console.readCharacter();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

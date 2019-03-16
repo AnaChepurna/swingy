@@ -1,22 +1,17 @@
 package com.achepurn.view;
 
-import com.achepurn.controller.IController;
-import com.achepurn.model.Hero;
-import com.achepurn.model.Model;
-
-import javax.swing.*;
-
-import java.awt.*;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.lang.reflect.InvocationTargetException;
-import java.util.List;
+import com.achepurn.controller.UserControl;
 
 /**
  * Created by achepurn on 1/30/19.
  */
 public class SwingView implements IView {
     public void run() {
+
+    }
+
+    @Override
+    public void takeUserControl(UserControl control) {
 
     }
 //    private Model model;

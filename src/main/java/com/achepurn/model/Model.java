@@ -1,13 +1,9 @@
 package com.achepurn.model;
 
 import com.achepurn.controller.Controller;
-import com.achepurn.controller.IController;
 import com.achepurn.view.ConsoleView;
-import com.achepurn.view.IView;
-import com.achepurn.view.SwingView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by achepurn on 1/30/19.
@@ -39,12 +35,14 @@ public class Model {
         controller = new Controller();
         game = new Game(new Hero("Olly", eHeroClass.WIZARD, controller), this);
         view = new ConsoleView( this, controller);
+        controller.initController(view, this);
     }
 
     public void run() {
         game.map.mapping(game.list);
         view.setMap(game.map);
         view.run();
+        System.out.println("lol");
         view.run();
     }
 
@@ -58,5 +56,13 @@ public class Model {
 
     public aUnit getUnit(int i) {
         return game.getUnit(i);
+    }
+
+    public aUnit getHero() {
+        return game.hero;
+    }
+
+    public int getMapSize(){
+        return game.map.size;
     }
 }

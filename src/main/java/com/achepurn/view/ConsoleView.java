@@ -1,16 +1,13 @@
 package com.achepurn.view;
 
 import com.achepurn.controller.Controller;
-import com.achepurn.controller.IController;
+import com.achepurn.controller.UserControl;
 import com.achepurn.model.*;
 import jline.AnsiWindowsTerminal;
 import jline.console.ConsoleReader;
 
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.util.List;
-import java.util.Scanner;
 
 /**
  * Created by achepurn on 1/30/19.
@@ -20,6 +17,7 @@ public class ConsoleView implements IView {
     private Model model;
     private Controller controller;
     private Map map;
+    private UserControlListener listener;
     AnsiWindowsTerminal terminal;
     ConsoleReader console;
 
@@ -39,6 +37,7 @@ public class ConsoleView implements IView {
         terminal.init();
         this.console = new ConsoleReader(System.in, System.out, terminal);
         console.setExpandEvents(true);
+        listener = new UserControlListener(console.getInput(), this);
     }
 
     public void setMap(Map map) {
@@ -91,9 +90,13 @@ public class ConsoleView implements IView {
         try {
             clearConsole();
             printMap();
-            console.readCharacter();
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void takeUserControl(UserControl control) {
+        controller.provideUserMoovement(control);
     }
 }

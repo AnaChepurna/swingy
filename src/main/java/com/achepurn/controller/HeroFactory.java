@@ -10,14 +10,14 @@ import java.util.List;
  */
 public class HeroFactory {
     private List<Hero> listHero;
-    private IController controller;
+//    private IController controller;cntroller
     private IView view;
 
-    public HeroFactory(IController controller, IView view, List<Hero> list) {
-        listHero = list;
-        this.controller = controller;
-        this.view = view;
-    }
+//    public HeroFactory(IController controller, IView view, List<Hero> list) {
+//        listHero = list;
+//        this.controller = controller;
+//        this.view = view;
+//    }
 
     public Hero createHero() {
         return null;
